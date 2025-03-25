@@ -59,4 +59,3 @@ class ServiceContact(BaseModel):
     connection = models.ForeignKey(Connection, on_delete=models.CASCADE, related_name='contacts')
     service = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='contacts')
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='contacts')
-
