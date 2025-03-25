@@ -60,3 +60,9 @@ class ServiceContact(BaseModel):
     service = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='contacts')
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='contacts')
 
+
+class Salom(BaseModel):
+    connection = models.ForeignKey(Connection, on_delete=models.CASCADE, related_name='contacts')
+    service = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='contacts')
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='contacts')
+
