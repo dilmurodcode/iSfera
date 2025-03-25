@@ -60,3 +60,7 @@ class ServiceContact(BaseModel):
     service = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='contacts')
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='contacts')
 
+class Hello(BaseModel):
+    title = models.CharField(max_length=255)
+    description = models.CharField(max_length=255)
+    order = models.IntegerField(default=1)
