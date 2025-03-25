@@ -2,11 +2,14 @@ from django.contrib import admin
 from .models import *
 from app.models import Connection, ClientCompany, ServiceContact
 
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('name', 'order')
+    search_fields = ('name',)
 
-admin.site.register(Category)
 admin.site.register(Service)
 admin.site.register(Info)
-# Register your models here.
+
 @admin.register(Connection)
 class AdminConnection(admin.ModelAdmin):
     list_display = ('id', 'full_name', 'phone', 'email')
