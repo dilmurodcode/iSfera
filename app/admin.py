@@ -9,7 +9,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 admin.site.register(Service)
 admin.site.register(Info)
-# Register your models here.
+
 @admin.register(Connection)
 class AdminConnection(admin.ModelAdmin):
     list_display = ('id', 'full_name', 'phone', 'email')
