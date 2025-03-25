@@ -1,14 +1,20 @@
 from django.db import models
 
+class BaseModel(models.Model):
 
-# Create your models here.
-class Connection(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        abstract = True
+
+
+class Connection(BaseModel):
     full_name = models.CharField(max_length=255)
     phone = models.CharField(max_length=255)
     email = models.CharField(max_length=255)
 
-
-class ClientCompany(models.Model):
+class ClientCompany(BaseModel):
 
     class TypeChoice(models.TextChoices):
         CUSTOMER = 'customer', 'CUSTOMER'
@@ -21,15 +27,6 @@ class ClientCompany(models.Model):
     type = models.CharField(max_length=255, choices=TypeChoice.choices, default=TypeChoice.CUSTOMER)
 
 
-    '''Service connection'''
-class ServiceContact(models.Model):
-    connection = models.CharField(max_length=255)
-    service = models.CharField(max_length=255)
-    category = models.CharField(max_length=255)
-
-class BaseModel(models.Model):
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now_add=True)
 
 class Category(BaseModel):
     name = models.CharField(max_length=255)
@@ -57,3 +54,9 @@ class Info(BaseModel):
     image = models.ImageField()
     description = models.CharField(max_length=255)
     order = models.IntegerField(default=1)
+
+class ServiceContact(BaseModel):
+    connection = models.ForeignKey(Connection, on_delete=models.CASCADE, related_name='contacts')
+    service = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='contacts')
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='contacts')
+
