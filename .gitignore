@@ -1,3 +1,8 @@
 /venv
 .idea
 db.sqlite3
+/.idea
+/db.sqlite3
+*.idea
+*venv
+*sqlite3
