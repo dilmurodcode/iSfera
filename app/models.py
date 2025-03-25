@@ -66,3 +66,9 @@ class HelloMss(BaseModel):
     image = models.ImageField()
     description = models.CharField(max_length=255)
     order = models.IntegerField(default=1)
+
+class Salom(BaseModel):
+    connection = models.ForeignKey(Connection, on_delete=models.CASCADE, related_name='contacts')
+    service = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='contacts')
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='contacts')
+
