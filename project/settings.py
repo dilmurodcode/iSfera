@@ -116,7 +116,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 JAZZMIN_SETTINGS = {
     "site_title": "Library Admin",
 
-    "site_header": "Dilmurod",
+    "site_header": "iSfera",
 
     "site_brand": "Dilmurod",
 
