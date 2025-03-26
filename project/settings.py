@@ -182,6 +182,12 @@ JAZZMIN_SETTINGS = {
         "auth": "fas fa-users-cog",
         "auth.user": "fas fa-user",
         "auth.Group": "fas fa-users",
+        "app.Info": "fa-solid fa-info",
+        "app.Connection": "fa-solid fa-phone",
+        "app.Category": "fa-solid fa-list",
+        "app.ServiceContact": "fa-solid fa-address-book",
+        "app.Service": "fa-solid fa-taxi",
+        "app.ClientCompany": "fa-solid fa-building"
     },
 
     "default_icon_parents": "fas fa-chevron-circle-right",
