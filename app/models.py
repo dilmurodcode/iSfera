@@ -14,6 +14,7 @@ class Connection(BaseModel):
     phone = models.CharField(max_length=255)
     email = models.CharField(max_length=255)
 
+
 class ClientCompany(BaseModel):
 
     class TypeChoice(models.TextChoices):
@@ -49,17 +50,15 @@ class Service(BaseModel):
     spend_time = models.DateTimeField(auto_now_add=True)
     is_active = models.BooleanField(default=True)
 
+
 class Info(BaseModel):
     title = models.CharField(max_length=255)
     image = models.ImageField()
     description = models.CharField(max_length=255)
     order = models.IntegerField(default=1)
 
+
 class ServiceContact(BaseModel):
     connection = models.ForeignKey(Connection, on_delete=models.CASCADE, related_name='contacts')
     service = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='contacts')
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='contacts')
-
-
-class GitInfo(BaseModel):
-    title = models.CharField(max_length=255)
