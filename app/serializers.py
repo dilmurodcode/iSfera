@@ -71,7 +71,7 @@ class ServiceContactSerializer(serializers.ModelSerializer):
 
         return ServiceContact.objects.create(connection=connection, service=service, category=category)
 
-print('hello')
+
 
 
 
