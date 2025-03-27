@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import *
 from app.models import Connection, ClientCompany, ServiceContact
 
+
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'order')
@@ -16,7 +17,7 @@ class ServiceAdmin(admin.ModelAdmin):
 
 @admin.register(Info)
 class InfoAdmin(admin.ModelAdmin):
-    list_display = ('id','title')
+    list_display = ('id', 'title')
     list_display_links = ('id', 'title')
 
 
