@@ -7,8 +7,18 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'order')
     search_fields = ('name',)
 
-admin.site.register(Service)
-admin.site.register(Info)
+
+@admin.register(Service)
+class ServiceAdmin(admin.ModelAdmin):
+    list_display = ('id',)
+    list_display_links = ('id',)
+
+
+@admin.register(Info)
+class InfoAdmin(admin.ModelAdmin):
+    list_display = ('id','title')
+    list_display_links = ('id', 'title')
+
 
 @admin.register(Connection)
 class AdminConnection(admin.ModelAdmin):
