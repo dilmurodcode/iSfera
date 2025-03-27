@@ -7,7 +7,7 @@ from rest_framework.response import Response
 class ConnectionListAPIViews(views.APIView):
 
     def get(self, request):
-        data = Connection.objects.filter()
+        data = Connection.objects.all()
         serializer = serializers.ConnectionSerializer(data, many=True)
         return Response(
             data=serializer.data,)
