@@ -70,7 +70,6 @@ class ServiceContactSerializer(serializers.ModelSerializer):
         category = Category.objects.create(**category)
 
         return ServiceContact.objects.create(connection=connection, service=service, category=category)
-
 print('hello')
 
 
