@@ -4,11 +4,11 @@ from rest_framework import views
 from rest_framework.response import Response
 
 
-class ConnectionAPIView(views.APIView):
+class InfoAPIView(views.APIView):
 
     def get(self, request):
-        queryset = Connection.objects.all()
-        serializer = serializers.ConnectionSerializer(queryset, many=True)
+        queryset = Info.objects.all()
+        serializer = serializers.InfoSerializer(queryset, many=True)
 
         return Response(
             data=serializer.data,

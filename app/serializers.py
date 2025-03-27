@@ -1,10 +1,10 @@
 from .models import *
 from rest_framework import serializers
 
-class ConnectionSerializer(serializers.ModelSerializer):
+class InfoSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Connection
+        model = Info
         fields = (
-            'id', 'full_name', 'phone', 'email'
+            'id', 'title', 'image', 'description', 'order'
         )
