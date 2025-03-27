@@ -14,6 +14,3 @@ class ConnectionAPIView(views.APIView):
             data=serializer.data,
             status=200
         )
-
-
-

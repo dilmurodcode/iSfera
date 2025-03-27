@@ -8,3 +8,5 @@ class ConnectionSerializer(serializers.ModelSerializer):
         fields = (
             'id', 'full_name', 'phone', 'email'
         )
+
+
