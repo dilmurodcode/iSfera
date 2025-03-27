@@ -1,19 +1,9 @@
+from django.shortcuts import render
 from .models import *
+from rest_framework import views, generics
 from . import serializers
-from rest_framework import views
 from rest_framework.response import Response
 
-
-class InfoAPIView(views.APIView):
-
-    def get(self, request):
-        queryset = Info.objects.all()
-        serializer = serializers.InfoSerializer(queryset, many=True)
-
-        return Response(
-            data=serializer.data,
-            status=200
-        )
-
-
-
+class ConnectionListAPIViews(generics.ListAPIView):
+    queryset = Connection.objects.all()
+    serializer_class = serializers.ConnectionSerializer
