@@ -1,7 +1,7 @@
 from django.db import models
 
-class BaseModel(models.Model):
 
+class BaseModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
 
@@ -16,7 +16,6 @@ class Connection(BaseModel):
 
 
 class ClientCompany(BaseModel):
-
     class TypeChoice(models.TextChoices):
         CUSTOMER = 'customer', 'CUSTOMER'
         COMPANY = 'company', 'COMPANY'
@@ -28,7 +27,6 @@ class ClientCompany(BaseModel):
     type = models.CharField(max_length=255, choices=TypeChoice.choices, default=TypeChoice.CUSTOMER)
 
 
-
 class Category(BaseModel):
     name = models.CharField(max_length=255)
     order = models.IntegerField(default=1)
@@ -38,7 +36,7 @@ class Category(BaseModel):
         null=True,
         blank=True,
         related_name='subcategories'
-        )
+    )
 
     def __str__(self):
         return self.name
