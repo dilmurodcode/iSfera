@@ -5,7 +5,7 @@ from app.models import Connection, ClientCompany, ServiceContact
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('name', 'order')
+    list_display = ("id", 'name', 'order')
     search_fields = ('name',)
 
 
