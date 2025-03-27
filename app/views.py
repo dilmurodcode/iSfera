@@ -1,8 +1,8 @@
-from django.shortcuts import render
-from .models import *
-from rest_framework import views, generics
+from rest_framework import generics
+
 from . import serializers
-from rest_framework.response import Response
+from .models import *
+
 
 class ConnectionListAPIViews(generics.ListAPIView):
     queryset = Connection.objects.all()
